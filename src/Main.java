@@ -24,31 +24,36 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String[] integerList;
-        String[] operationsList;
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter the FULL operation:");
-        String userInput = in.nextLine();
+        //while(true) { // yeah i need to make it so like once the code is done running you have an option to run it again and it does instead of shutting down
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter the FULL operation (4 operations i.e 2-(3)+4/1):");
+            String userInput = in.nextLine();
+            // example test: userInput = 2-(3*2)+1/1;
+            String regex = "[^\\*\\/\\-\\+\\()\\d]"; //anything but the junk
+            userInput = userInput.replaceAll(regex, ""); //clears the junk
+
+
 
     }
 
 
     static String cleanList(String input) { // also replace parentheses with multiplication here
+        // also check if any two operations are next to each other, and if there is one less operation than number of elements
+        // also evaluate the things inside the parentheses using for loop string traversal to make them one term
+    }
+    static boolean checks(String temp) {
+        // check for: // division by zero // number of operations in comparison to terms // check if any two operations are right next to each other using substring traversal
+    }
+    static int[] integerList(String[] input) { // if you take input string and just remove the appended ints then you can just get a list of clean operations
 
     }
-    static boolean checkForDivideByZero() {
-
-    }
-    static int[] integerList(String input) { // if you take input string and just remove the appended ints then you can just get a list of clean operations
-
-    }
-    static String[] operationList(String input) {
+    static String[] operationList(String[] input) {
 
     }
     static int[] md() { // multiplication and division
 
     }
     static int as() { // addition and subtraction, final operation so it should just return one number instead of an array :D
-
+        //return "Result of [xyz calculation as a cleaned list] is [result]"
     }
 }
